@@ -11,7 +11,7 @@ set -xe
 
 # Set the output filenames
 now=$(date +"%Y%m%d%H%M%S")
-s3bucket="s3://jirwin-sdk-test"
+s3bucket="s3://$AWS_BUCKET"
 c1zFile="$s3bucket/scheduled-sync.c1z"
 csvFile="$s3bucket/sync-github-$now.csv"
 xlsxFile="$s3bucket/sync-github-$now.xlsx"

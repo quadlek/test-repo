@@ -10,6 +10,15 @@ jobs:
     name: Baton diff Github permissions
     runs-on: ubuntu-latest
     steps:
+      - name: Login to GitHub Container registry
+        uses: docker/login-action@v1
+        env:
+          GITHUB_USER: jirwin
+          GITHUB_TOKEN: ${{ secrets.BATON_TOKEN }}
+        with:
+          registry: ghcr.io
+          username: jirwin
+          password: ${{ secrets.BATON_TOKEN }}
       - uses: actions/checkout@v3
       - run: "./.github/scripts/schedule.sh"
         shell: bash

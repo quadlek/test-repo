@@ -21,7 +21,7 @@ docker pull ghcr.io/conductorone/baton:latest
 docker pull ghcr.io/conductorone/baton-github:latest
 
 # Run sync to produce c1z
-docker run -e BATON_TOKEN -e BATON_ORGS -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION -e AWS_BUCKET ghcr.io/conductorone/baton-github:latest -f "$c1zFile"
+docker run -e BATON_TOKEN -e BATON_ORGS -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY ghcr.io/conductorone/baton-github:latest -f "$c1zFile"
 
 # Run a diff
-docker run -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION -e AWS_BUCKET  ghcr.io/conductorone/baton:latest -f "$c1zFile" diff
+docker run -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY ghcr.io/conductorone/baton:latest -f "$c1zFile" diff

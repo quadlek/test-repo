@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Login to GitHub Container registry
         uses: docker/login-action@v1
-        env:
-          GITHUB_USER: jirwin
-          GITHUB_TOKEN: ${{ secrets.BATON_TOKEN }}
         with:
           registry: ghcr.io
           username: jirwin
